@@ -1,0 +1,14 @@
+(async () => {
+
+    Load the cars
+    const DataSheet = await csv().fromFile("DataSheet.csv");
+
+    Show the cars
+    console.log(cars);
+
+
+    Saved the cars
+    const carsInCsv = new Parser({ fields: ["Year", "Make", "Model", "Length"] }).parse(cars);
+    fs.writeFileSync("cars.csv", carsInCsv);
+
+})(); 
